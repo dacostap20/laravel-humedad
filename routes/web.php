@@ -13,10 +13,8 @@ use App\Http\Controllers\HumedadPaisesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [HumedadPaisesController::class, 'index']);
 Route::get('/ver-humedad', [HumedadPaisesController::class, 'index']);
 Route::get('/ver-humedad-ciudad/{lugar?}/{fecha?}', [HumedadPaisesController::class, 'lugarEspecifico']);
 Route::post('/ver-humedad-fecha', [HumedadPaisesController::class, 'cambioFecha']);
